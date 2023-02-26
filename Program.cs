@@ -25,3 +25,10 @@ string[] GetArray(int size)
     return strMatrix; 
 }
 
+int UserInput()
+{
+    System.Console.Write("Укажите необходимый размер массива: ");
+    int size = int.Parse(Console.ReadLine()!);
+    return size;
+}
+

@@ -11,4 +11,17 @@ string[] GetArray(int size)
     return strArray[];
 }
 
- 
+ string[] ConditionCheck(string[] strArray, int size)
+{
+    string[] strMatrix = new string[size];
+    for(int i = 0; i < strArray.Length; i++)
+    {
+        if(strArray[i].Length < 4) 
+        {
+            strMatrix[i] = strArray[i];
+            i++;
+        }
+    }
+    return strMatrix; 
+}
+

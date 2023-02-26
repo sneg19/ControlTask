@@ -8,18 +8,27 @@ string[] GetArray(int size)
         System.Console.Write($"Введите стрококу, которая запишется в {i}-й элемент массива: ");
         strArray[i] = Console.ReadLine()!;
     }
-    return strArray[];
+    return strArray;
 }
 
- string[] ConditionCheck(string[] strArray, int size)
+ string[] ConditionCheck(string[] strArray)
 {
-    string[] strMatrix = new string[size];
-    for(int i = 0; i < strArray.Length; i++)
+    int newSize = 0;
+    for (int i = 0; i < strArray.Length; i++)
     {
-        if(strArray[i].Length < 4) 
+        if (strArray[i].Length < 4)
         {
-            strMatrix[i] = strArray[i];
-            i++;
+            newSize++;
+        }
+    }
+           
+    string[] strMatrix = new string[newSize];
+    int newK = 0;
+    for (int j = 0; j < strArray.Length; j++)
+    {
+        if (strArray[j].Length < 4)
+        {
+            strMatrix[newK++] = strArray[j];
         }
     }
     return strMatrix; 
@@ -36,7 +45,7 @@ void Main()
 {
     int sizeArray = UserInput();
     string[] ourArray = GetArray(sizeArray);
-    string[] strMatrix = ConditionCheck(ourArray, sizeArray);
+    string[] strMatrix = ConditionCheck(ourArray);
     Console.WriteLine(string.Join(",", ourArray));
     Console.WriteLine(string.Join(",", strMatrix));
 }

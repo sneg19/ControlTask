@@ -32,3 +32,13 @@ int UserInput()
     return size;
 }
 
+void Main()
+{
+    int sizeArray = UserInput();
+    string[] ourArray = GetArray(sizeArray);
+    string[] strMatrix = ConditionCheck(ourArray, sizeArray);
+    Console.WriteLine(string.Join(",", ourArray));
+    Console.WriteLine(string.Join(",", strMatrix));
+}
+
+Main();
